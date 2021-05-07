@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+let sideArray = [];
+check(1);
+function check(start) {
+  for (let i = start; i <= 3; i++) {
+    let validLength = 0;
+    validLength = Number(prompt(`Enter the side ${i} of triangle : `));
+    while (true) {
+      if (validLength > 0) {
+        break;
+      }
+      validLength = Number(prompt(`Please enter a valid length for side ${i}`));
+    }
+    sideArray.push(validLength);
+    console.log(sideArray);
+  }
+}
+// console.log(sideArray);
+while (true) {
+  if (
+    sideArray[0] + sideArray[1] > sideArray[2] &&
+    sideArray[0] + sideArray[2] > sideArray[1] &&
+    sideArray[1] + sideArray[2] > sideArray[0]
+  ) {
+    console.log("OK!");
+    break;
+  }
+  alert("Please try again from the beginning.");
+  sideArray.pop();
+  console.log(sideArray);
+  check(3);
+}
+    </script>
+    
+</body>
+</html>

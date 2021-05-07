@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1234 -> a b c d -> l c d -> a w d
+        //   const code = prompt("Enter a code : ");
+        const code = "111";
+        let result = "";
+        let codeList = code.split("");
+        // rakamların harf karşılıkları
+        function check(char) {
+          result += String.fromCharCode(parseInt(char) + 96);
+        }
+        // gelen kodu mümkünse 2 değilse 1 basamaklıya ayır
+        function AllPosibility() {
+          for (let i = 0; i < codeList.length; i++) {
+            if (
+              parseInt(codeList[i] + codeList[i + 1]) > 26 ||
+              codeList[i + 1] == undefined
+            ) {
+              check(codeList[i]);
+            } else {
+              check(codeList[i] + codeList[i + 1]);
+              i++;
+            }
+          }
+        }
+        AllPosibility();
+        console.log(result);
+        // const mapChar = new Map();
+        //   for (let i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++) {
+        //     mapping(String.fromCharCode(i));
+        //   }
+        //   function mapping(char) {
+        //     mapChar.set(char, char.charCodeAt(0) - 96);
+        //   }
+        //   console.log(Object.fromEntries(mapChar));
+      </script>
+</body>
+</html>
