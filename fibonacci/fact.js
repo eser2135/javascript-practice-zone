@@ -24,7 +24,7 @@
     return (num * factorial(num-1));
 } */
 
-
+/* 
 enterNum = Number(prompt("please enter a number: ", num));
 
 for (var i = 0; i <= enterNum; i++) {
@@ -34,7 +34,7 @@ for (var i = 0; i <= enterNum; i++) {
         return a[i];             
     }
 }
-
+ */
 
 /* result ile yapilmis ornek 3'e bolunebilme icin
 

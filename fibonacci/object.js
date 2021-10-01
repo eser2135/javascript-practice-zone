@@ -12,3 +12,4 @@ var dog = {
   
   dog.bark();
   console.log(dog.result());
+
